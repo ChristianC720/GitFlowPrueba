@@ -36,6 +36,86 @@
             font-size: 16px;
         }
 
+        .welcome {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .welcome h2 {
+            margin-bottom: 14px;
+            font-size: clamp(24px, 4vw, 32px);
+            color: #8e44ad;
+        }
+
+        .welcome-intro {
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .cat-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .cat-card {
+            min-width: 0;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #ecd5f5;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(142, 68, 173, 0.1);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .cat-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 5 / 3;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 16px;
+        }
+
+        .cat-card figcaption {
+            margin-top: 12px;
+            padding: 16px 10px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #f8edff, #fff0f8);
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .welcome-thanks {
+            color: #8e44ad;
+            line-height: 1.6;
+        }
+
+        @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+            .cat-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 14px 30px rgba(142, 68, 173, 0.18);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .cat-gallery {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-inline: auto;
+            }
+
+            .welcome {
+                padding: 32px 20px;
+            }
+        }
+
     .footer {
         background: #211b2d;
         color: #f8f3ff;
@@ -140,11 +220,27 @@
         <p>Los más #gitFlowosos #gitFlowlovers Neko desu~~ asi de simple y soporta</p>
     </header>
 
-    <img src="images.jpg" alt="Imagen de gato">
-       <p>¡Bienvenidos a la página oficial de Panuchitos Team! Aquí encontrarás todo lo relacionado con nuestro equipo y nuestras actividades. ¡Explora y disfruta!</p>  
-        <p>¡Gracias por visitar nuestra página!</p>
-      <img src="gatoo.png" alt="Imagen de gato">  
-    <img src="gatoholiday.png" alt="Imagen de gatooo">  
+    <main class="welcome">
+        <h2>¡Bienvenidos a Panuchitos Team!</h2>
+        <p class="welcome-intro">¡Bienvenidos a la página oficial de Panuchitos Team!. ¡Explora y disfruta!</p>
+
+        <div class="cat-gallery">
+            <figure class="cat-card">
+                <img src="images.jpg" width="632" height="316">
+                <figcaption>Panuchos</figcaption>
+            </figure>
+            <figure class="cat-card">
+                <img src="gatoo.png" width="800" height="480" loading="lazy">
+                <figcaption>Khris</figcaption>
+            </figure>
+            <figure class="cat-card">
+                <img src="gatonaranja.png"width="625" height="350" loading="lazy">
+                <figcaption>Gato naranjoso</figcaption>
+            </figure>
+        </div>
+
+        <p class="welcome-thanks">¡Puro Gitflow vibes!</p>
+    </main>
 
 
     <!--AQUI VA EL CONTENIDO-->
